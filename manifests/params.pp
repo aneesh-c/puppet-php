@@ -8,7 +8,7 @@ class php::params inherits php::version {
     $configfile_fpm = '/etc/php.ini'
     $configfile_wwwconf = '/etc/php-fpm.d/www.conf'
   }
-  if $::osfamily == 'Debian' and $ver == undef {
+  elsif $::osfamily == 'Debian' and $ver == undef {
     case $::operatingsystemrelease {
       /^12.*/: {
         $packagename_mod = [ 'php5-mcrypt', 'php5-gd', 'libapache2-mod-php5' ]

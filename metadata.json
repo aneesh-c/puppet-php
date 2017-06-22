@@ -1,6 +1,6 @@
 {
   "name": "aneesh-php",
-  "version": "1.8.2",
+  "version": "2.0.0",
   "author": "aneesh",
   "summary": "Puppet module for php",
   "license": "Apache-2.0",
@@ -34,6 +34,12 @@
         "12.04",
         "14.04",
         "16.04"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "7"
       ]
     }
   ],
