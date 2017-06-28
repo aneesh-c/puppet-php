@@ -5,7 +5,7 @@
   "manifests/params.pp": "3622cbcbcfd4f8b457f6ea162b5ee55f",
   "manifests/php_fpm.pp": "3b2242cbc172890707b49ecf4df1ba44",
   "manifests/version.pp": "728cd45db0bd956ace0ca05c15c320d6",
-  "metadata.json": "f14b3256bbad030e65fdb9ba17a9334b",
+  "metadata.json": "b7a05b0f9445f5988b0efae2cc2fab20",
   "templates/configfile.erb": "8e09b3127d2758090131e0d1a8bb039c",
   "templates/www.conf.erb": "c22e1d9b658e9aa68d6f946f0628ab3b"
 }
