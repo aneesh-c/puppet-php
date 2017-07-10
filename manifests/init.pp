@@ -186,7 +186,7 @@ class php (
   if $php == 'YES' {
     package { $package_name: ensure => installed }
     file { $configfile:
-      require => package[$package_name],
+      require => Package[$package_name],
       backup  => '.backup',
       content => template($template),
     }
@@ -195,7 +195,7 @@ class php (
     package { $package_name_fpm: ensure => installed }
     if ! defined(File[$configfile_fpm]) {
       file { $configfile_fpm:
-        require => package[$package_name_fpm],
+        require => Package[$package_name_fpm],
         backup  => '.backup',
         content => template($template),
       }

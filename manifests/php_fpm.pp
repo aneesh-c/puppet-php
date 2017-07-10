@@ -22,7 +22,7 @@ class php::php_fpm (
   $php_value_soap_wsdl_cache_dir  = undef,
 ) inherits ::php::params {
   file { $configfile_wwwconf:
-    require => package[$package_name_fpm],
+    require => Package[$package_name_fpm],
     backup  => '.backup',
     content => template($template_wwwconf),
   }
