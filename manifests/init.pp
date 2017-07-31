@@ -13,9 +13,8 @@
 #
 
 class php (
-  $php                               = 'YES',
-  $php_fpm                           = 'NO',
-  $packagename_mod                   = $::php::params::packagename_mod,
+  $php                               = true,
+  $php_fpm                           = false,
   $package_name                      = $::php::params::package_name,
   $package_name_fpm                  = $::php::params::package_name_fpm,
   $configfile                        = $::php::params::configfile,
@@ -182,8 +181,7 @@ class php (
   $soap_wsdl_cache_limit             = undef,
   $ldap_max_links                    = undef,
 ) inherits ::php::params {
-  package { $packagename_mod: ensure => installed }
-  if $php == 'YES' {
+  if $php {
     package { $package_name: ensure => installed }
     file { $configfile:
       require => Package[$package_name],
@@ -191,7 +189,7 @@ class php (
       content => template($template),
     }
   }
-  if $php_fpm == 'YES' {
+  if $php_fpm {
     package { $package_name_fpm: ensure => installed }
     if ! defined(File[$configfile_fpm]) {
       file { $configfile_fpm:
@@ -202,7 +200,7 @@ class php (
     }
     if $::osfamily == 'RedHat' {
       service { 'php-fpm':
-        require => package[$package_name_fpm],
+        require => Package[$package_name_fpm],
         enable  => true,
       }
     }

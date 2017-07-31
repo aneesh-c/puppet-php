@@ -4,8 +4,7 @@ class php::version (
   if $::osfamily == 'Debian' {
     if $php_version == '7.1' {
       $ver = true
-      $packagename_mod = [ 'php7.1-mcrypt', 'php7.1-gd', 'libapache2-mod-php7.1' ]
-      $package_name = [ 'php7.1' ]
+      $package_name = [ 'php7.1', 'libapache2-mod-php7.1' ]
       $package_name_fpm = [ 'php7.1-fpm' ]
       $configfile = '/etc/php/7.1/apache2/php.ini'
       $configfile_fpm = '/etc/php/7.1/fpm/php.ini'
