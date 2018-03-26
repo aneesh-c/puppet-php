@@ -15,8 +15,7 @@ include php
 Custom configuration:
 
 ```puppet
-#PHP[156]-5.6
-  class { 'php':
+class { 'php':
     php                               => true,
     php_fpm                           => true,
     engine                            => 'On',
@@ -154,7 +153,7 @@ Custom configuration:
     soap_wsdl_cache_ttl               => '86400',
     soap_wsdl_cache_limit             => '5',
     ldap_max_links                    => '-1',
-  }
+ }
 ```
 
 php-fpm configuration:

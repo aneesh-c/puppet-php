@@ -18,6 +18,14 @@ class php::version (
       $configfile_fpm = '/etc/php/7.1/fpm/php.ini'
       $configfile_wwwconf = '/etc/php/7.1/fpm/pool.d/www.conf'
     }
+    elsif $php_version == '7.0' {
+      $ver = true
+      $package_name = [ 'php7.0', 'libapache2-mod-php7.0' ]
+      $package_name_fpm = [ 'php7.0-fpm' ]
+      $configfile = '/etc/php/7.0/apache2/php.ini'
+      $configfile_fpm = '/etc/php/7.0/fpm/php.ini'
+      $configfile_wwwconf = '/etc/php/7.0/fpm/pool.d/www.conf'
+    }
     elsif $php_version == '5.6' {
       $ver = true
       $package_name = [ 'php5.6', 'libapache2-mod-php5.6' ]

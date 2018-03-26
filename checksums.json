@@ -1,11 +1,11 @@
 {
   "LICENSE": "50d908cf666418ed04b9f5858b168530",
-  "README.md": "2f23931e13939365ac3272bbad7b9089",
+  "README.md": "a53be8b5ab80b4e6b6a03394813a075c",
   "manifests/init.pp": "8f61159db1aa353a5c9475113a51128f",
   "manifests/params.pp": "368a7006903012b731e71595703b57eb",
   "manifests/php_fpm.pp": "d455dc1c80c2e0b4a6af09021a8ed23c",
-  "manifests/version.pp": "6936eef58824a1e648f6e9332731ccab",
-  "metadata.json": "0c607f7456ab1a2885463c964c94bf34",
+  "manifests/version.pp": "35d88c777c17100420422794dda9cc87",
+  "metadata.json": "0311abeb672d2acef7d4049fcf5d267f",
   "templates/configfile.erb": "8e09b3127d2758090131e0d1a8bb039c",
   "templates/www.conf.erb": "c22e1d9b658e9aa68d6f946f0628ab3b"
 }
