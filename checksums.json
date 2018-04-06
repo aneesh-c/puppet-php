@@ -4,8 +4,8 @@
   "manifests/init.pp": "8f61159db1aa353a5c9475113a51128f",
   "manifests/params.pp": "368a7006903012b731e71595703b57eb",
   "manifests/php_fpm.pp": "d455dc1c80c2e0b4a6af09021a8ed23c",
-  "manifests/version.pp": "e6e45f3b6e450f07d6ef873a3273e2d3",
-  "metadata.json": "00389a0eb23b71a99e4df9944836467a",
+  "manifests/version.pp": "638bfccc50987d7305fb46fa9d85c0c2",
+  "metadata.json": "ac2d0658cbc1c97d8ce7b264bee337c9",
   "templates/configfile.erb": "8e09b3127d2758090131e0d1a8bb039c",
   "templates/www.conf.erb": "c22e1d9b658e9aa68d6f946f0628ab3b"
 }

@@ -49,10 +49,10 @@ class php::version (
     if $::operatingsystem == 'Ubuntu' and $php_version != undef {
       package { 'python-software-properties': ensure => installed }
       package { 'software-properties-common': ensure => installed }
-      exec { "add-apt-repository ppa:ondrej/php":
+      exec { 'add-apt-repository ppa:ondrej/php':
         path   => '/usr/bin:/usr/sbin:/bin:/sbin',
       }
-      exec { "apt-get update":
+      exec { 'apt-get update':
         path   => '/usr/bin:/usr/sbin:/bin:/sbin',
       }
     }
@@ -60,13 +60,13 @@ class php::version (
       package { 'apt-transport-https': ensure => installed }
       package { 'lsb-release': ensure => installed }
       package { 'ca-certificates': ensure => installed }
-      exec { "wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg":
+      exec { 'wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg':
         path   => '/usr/bin:/usr/sbin:/bin:/sbin',
       }
       exec { 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list':
         path   => '/usr/bin:/usr/sbin:/bin:/sbin',
       }
-      exec { "apt-get update":
+      exec { 'apt-get update':
         path   => '/usr/bin:/usr/sbin:/bin:/sbin',
       }
     }

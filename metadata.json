@@ -1,6 +1,6 @@
 {
   "name": "aneesh-php",
-  "version": "5.0.5",
+  "version": "5.0.6",
   "author": "aneesh",
   "summary": "Puppet module for php",
   "license": "Apache-2.0",
