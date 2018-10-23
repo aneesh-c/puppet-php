@@ -2,7 +2,29 @@ class php::version (
   $php_version = undef,
 ){
   if $::osfamily == 'Redhat' {
-    if $php_version == '7.2' {
+    if $php_version == '7.3' {
+      exec { "sed -i 's/enabled=0/enabled=1/g' /etc/yum.repos.d/remi-php73.repo":
+        onlyif => 'test -f /etc/yum.repos.d/remi-php73.repo',
+        path   => '/usr/bin:/usr/sbin:/bin:/sbin',
+      }
+      exec { "sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/remi-php72.repo":
+        onlyif => 'test -f /etc/yum.repos.d/remi-php72.repo',
+        path   => '/usr/bin:/usr/sbin:/bin:/sbin',
+      }
+      exec { "sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/remi-php71.repo":
+        onlyif => 'test -f /etc/yum.repos.d/remi-php71.repo',
+        path   => '/usr/bin:/usr/sbin:/bin:/sbin',
+      }
+      exec { "sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/remi-php70.repo":
+        onlyif => 'test -f /etc/yum.repos.d/remi-php70.repo',
+        path   => '/usr/bin:/usr/sbin:/bin:/sbin',
+      }
+    }
+    elsif $php_version == '7.2' {
+      exec { "sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/remi-php73.repo":
+        onlyif => 'test -f /etc/yum.repos.d/remi-php73.repo',
+        path   => '/usr/bin:/usr/sbin:/bin:/sbin',
+      }
       exec { "sed -i 's/enabled=0/enabled=1/g' /etc/yum.repos.d/remi-php72.repo":
         onlyif => 'test -f /etc/yum.repos.d/remi-php72.repo',
         path   => '/usr/bin:/usr/sbin:/bin:/sbin',
@@ -17,6 +39,10 @@ class php::version (
       }
     }
     elsif $php_version == '7.1' {
+      exec { "sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/remi-php73.repo":
+        onlyif => 'test -f /etc/yum.repos.d/remi-php73.repo',
+        path   => '/usr/bin:/usr/sbin:/bin:/sbin',
+      }
       exec { "sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/remi-php72.repo":
         onlyif => 'test -f /etc/yum.repos.d/remi-php72.repo',
         path   => '/usr/bin:/usr/sbin:/bin:/sbin',
@@ -31,6 +57,10 @@ class php::version (
       }
     }
     elsif $php_version == '7.0' {
+      exec { "sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/remi-php73.repo":
+        onlyif => 'test -f /etc/yum.repos.d/remi-php73.repo',
+        path   => '/usr/bin:/usr/sbin:/bin:/sbin',
+      }
       exec { "sed -i 's/enabled=1/enabled=0/g' /etc/yum.repos.d/remi-php72.repo":
         onlyif => 'test -f /etc/yum.repos.d/remi-php72.repo',
         path   => '/usr/bin:/usr/sbin:/bin:/sbin',
@@ -70,7 +100,15 @@ class php::version (
         path   => '/usr/bin:/usr/sbin:/bin:/sbin',
       }
     }
-    if $php_version == '7.2' {
+    if $php_version == '7.3' {
+      $ver = true
+      $package_name = [ 'php7.3', 'libapache2-mod-php7.3' ]
+      $package_name_fpm = [ 'php7.3-fpm' ]
+      $configfile = '/etc/php/7.3/apache2/php.ini'
+      $configfile_fpm = '/etc/php/7.3/fpm/php.ini'
+      $configfile_wwwconf = '/etc/php/7.3/fpm/pool.d/www.conf'
+    }
+    elsif $php_version == '7.2' {
       $ver = true
       $package_name = [ 'php7.2', 'libapache2-mod-php7.2' ]
       $package_name_fpm = [ 'php7.2-fpm' ]

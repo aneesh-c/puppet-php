@@ -148,6 +148,7 @@ class php (
   $session_cookie_path               = undef,
   $session_cookie_domain             = undef,
   $session_cookie_httponly           = undef,
+  $session_cookie_samesite           = undef,
   $session_serialize_handler         = undef,
   $session_gc_probability            = undef,
   $session_gc_divisor                = undef,
