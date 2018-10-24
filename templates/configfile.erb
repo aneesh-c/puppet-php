@@ -1207,6 +1207,9 @@ cli_server.color = <%= @cli_server_color %>
 ; Defines the default timezone used by the date functions
 ; http://php.net/date.timezone
 ;date.timezone =
+<% if @date_timezone -%>
+date.timezone = <%= @date_timezone %>
+<% end -%>
 
 ; http://php.net/date.default-latitude
 ;date.default_latitude = 31.7667

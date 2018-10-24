@@ -81,6 +81,7 @@ class php (
   $allow_url_include                 = undef,
   $default_socket_timeout            = undef,
   $cli_server_color                  = undef,
+  $date_timezone                     = undef,
   $pcre_jit                          = undef,
   $pdo_mysql_cache_size              = undef,
   $pdo_mysql_default_socket          = undef,
