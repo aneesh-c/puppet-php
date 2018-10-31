@@ -77,10 +77,19 @@ class php::version (
   }
   elsif $::osfamily == 'Debian' {
     if $::operatingsystem == 'Ubuntu' and $php_version != undef {
-      package { 'python-software-properties': ensure => installed }
-      package { 'software-properties-common': ensure => installed }
-      exec { 'add-apt-repository ppa:ondrej/php':
-        path   => '/usr/bin:/usr/sbin:/bin:/sbin',
+      case $::operatingsystemrelease {
+        /^18.*/: {
+          exec { 'add-apt-repository ppa:ondrej/php':
+            path   => '/usr/bin:/usr/sbin:/bin:/sbin',
+          }
+        }
+        default: {
+          package { 'python-software-properties': ensure => installed }
+          package { 'software-properties-common': ensure => installed }
+          exec { 'add-apt-repository ppa:ondrej/php':
+            path   => '/usr/bin:/usr/sbin:/bin:/sbin',
+          }
+        }
       }
       exec { 'apt-get update':
         path   => '/usr/bin:/usr/sbin:/bin:/sbin',
